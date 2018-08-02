@@ -6,4 +6,4 @@
 
 - name: Install XCode-Tools
   script: install-xcodetools.sh
-  when: xcode_installed.rc not 0
+  when: xcode_installed.rc != 0

@@ -1,0 +1,9 @@
+---
+- name: Test for XCode-Tools
+  shell: xcode-select -p &> /dev/null
+  register: xcode_installed
+  failed_when: ( result.rc not in [ 0, 1, 2 ] )
+
+- name: Install XCode-Tools
+  script: install-xcodetools.sh
+  when: xcode_installed.rc not 0

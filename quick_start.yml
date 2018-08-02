@@ -14,13 +14,16 @@
   roles:
 
   tasks:
-    - name: include all the YML files from vars directory with variables
+    - name: include all the YML files from vars directory
       include_vars: 
         dir: 'vars'
         extensions: ['yml']
 
-    - name: install XCode Tools
-      command: xcode-select --install
+    - name: include all the YML files from tasks directory
+      include_tasks: 
+        dir: 'tasks'
+        extensions: ['yml']
     
-    - include: tasks/VSCode.yml
-    - include: tasks/Homebrew.yml
+    # - include: tasks/VSCode.yml
+    # - include: tasks/Homebrew.yml
+    # - include

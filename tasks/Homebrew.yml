@@ -7,8 +7,8 @@
 - name: Install homebrew
   script: install-homebrew.sh
   when: not brew.stat.exists
-    args:
-      creates: /usr/local/bin/brew
+  args:
+    creates: /usr/local/bin/brew
 
 - name: Doctor Homebrew
   command: brew doctor

@@ -19,4 +19,4 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - vagrant
-  - virtualbox
+  # - virtualbox

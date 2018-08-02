@@ -5,7 +5,8 @@
   register: brew
 
 - name: Install homebrew
-    shell: yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    script: install-homebrew.sh
+    when: not brew.stat.exists
     args:
       creates: /usr/local/bin/brew
 

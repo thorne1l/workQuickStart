@@ -12,7 +12,7 @@
 
 - name: Doctor Homebrew
   command: /usr/local/bin/brew doctor
-  failed_when: ''"Warning: Homebrew's bin was not found in your PATH." not in brew_health.stderr'
+  failed_when: '"Warning: Homebrew's bin was not found in your PATH." not in brew_health.stderr'
   register: brew_health
 
 - name: Up[date/grade] Homebrew

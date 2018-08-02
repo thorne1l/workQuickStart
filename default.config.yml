@@ -1,1 +1,22 @@
 ---
+homebrew_installed_packages:
+  - autoconf
+  - bash-completion
+  - git
+  - go
+  - node
+  - nvm
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - chromedriver
+  - docker
+  - firefox
+  - google-chrome
+  - vagrant
+  - virtualbox

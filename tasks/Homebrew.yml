@@ -1,6 +1,11 @@
 ---
+- name: Check if Homebrew is already installed
+  stat:
+    path: /usr/local/bin/brew
+  register: brew
+
 - name: Install homebrew
-    shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    shell: yes | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     args:
       creates: /usr/local/bin/brew
 

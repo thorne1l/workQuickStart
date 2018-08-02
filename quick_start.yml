@@ -18,12 +18,7 @@
       include_vars: 
         dir: 'vars'
         extensions: ['yml']
-
-    - name: include all the YML files from tasks directory
-      include_tasks: 
-        dir: 'tasks'
-        extensions: ['yml']
     
-    # - include: tasks/VSCode.yml
-    # - include: tasks/Homebrew.yml
-    # - include
+    - include: tasks/VSCode.yml
+    - include: tasks/Homebrew.yml
+    - include: tasks/XCode-Tools.yml

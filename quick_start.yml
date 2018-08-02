@@ -1,0 +1,22 @@
+---
+- name: Mac Dev Quickstart
+  hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - ../config.yml
+      tags: ['always']
+  
+  roles:
+
+  tasks:
+    - name: include all the YML files from vars directory with variables
+      include_vars: 
+        dir: 'vars'
+        extensions: ['yml']
+    
+    - include: tasks/VSCode.yml

@@ -5,17 +5,17 @@
   register: brew
 
 - name: Install homebrew
-    script: install-homebrew.sh
-    when: not brew.stat.exists
+  script: install-homebrew.sh
+  when: not brew.stat.exists
     args:
       creates: /usr/local/bin/brew
 
 - name: Doctor Homebrew
-    command: brew doctor
-    register: brew_health
+  command: brew doctor
+  register: brew_health
 
 - name: Up[date/grade] Homebrew
-    command: brew update && brew upgrade
+  command: brew update && brew upgrade
 
 - name: Homebrew Cask
-    command: brew install caskroom/cask/brew-cask
+  command: brew install caskroom/cask/brew-cask

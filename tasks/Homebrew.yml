@@ -1,0 +1,14 @@
+---
+- name: Install homebrew
+    command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    args:
+      creates: /usr/local/bin/brew
+
+- name: Doctor Homebrew
+    command: brew doctor
+
+- name: Up[date/grade] Homebrew
+    command: brew update && brew upgrade
+
+- name: Homebrew Cask
+    command: brew install caskroom/cask/brew-cask

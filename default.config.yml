@@ -8,6 +8,8 @@ homebrew_installed_packages:
   - nvm
   - wget
 
+homebrew_uninstalled_packages:
+
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
@@ -20,3 +22,6 @@ homebrew_cask_apps:
   - google-chrome
   - vagrant
   # - virtualbox
+
+homebrew_cask_uninstalled_apps:
+

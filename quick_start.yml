@@ -1,6 +1,6 @@
 ---
 - name: Mac Dev Quickstart
-  hosts: lukes-mpb.fios-router.home
+  hosts: all
 
   vars_files:
     - default.config.yml

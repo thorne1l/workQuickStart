@@ -1,11 +1,12 @@
 ---
 - name: Install homebrew
-    command: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    command: 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
     args:
       creates: /usr/local/bin/brew
 
 - name: Doctor Homebrew
     command: brew doctor
+    register: brew_health
 
 - name: Up[date/grade] Homebrew
     command: brew update && brew upgrade

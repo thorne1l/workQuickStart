@@ -1,0 +1,12 @@
+---
+- name: Test for sudoers line
+  shell: 'grep "%admin ALL=(ALL) NOPASSWD: ALL" /etc/sudoers'
+  register: sudoers_grep
+
+- name: Add line in sudoers if not exists
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%admin'
+    line: '%admin ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'

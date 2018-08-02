@@ -1,12 +1,14 @@
 ---
-# - name: Download Visual Studio Code
-#   get_url:
-#     url: https://go.microsoft.com/fwlink/?LinkID=620882
-#     checksum: md5:725649c79e09f9755e3e1f856d3dfc86
-#     tmp_dest: /tmp/VSCode-darwin-stable.zip
+- name: Check for Visual Studio Code
+  stat:
+    path: /Applications/Visual Studio Code.app/
+  register: vscode
 
 - name: Unpack Visual Studio Code
   unarchive:
     src: https://go.microsoft.com/fwlink/?LinkID=620882
     dest: /Applications
     remote_src: yes
+  when: not vscode.stat.exists
+
+# - name: Install VSCode Extensions

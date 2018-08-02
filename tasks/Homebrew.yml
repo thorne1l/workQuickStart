@@ -11,13 +11,13 @@
     creates: /usr/local/bin/brew
 
 - name: Doctor Homebrew
-  command: brew doctor
+  command: /usr/local/bin/brew doctor
   register: brew_health
 
 - name: Up[date/grade] Homebrew
-  command: brew update && brew upgrade
+  command: /usr/local/bin/brew update && brew upgrade
 
 - name: Homebrew Cask
-  command: brew install caskroom/cask/brew-cask
+  command: /usr/local/bin/brew install caskroom/cask/brew-cask
 
 # - name: Install Packages with Homebrew

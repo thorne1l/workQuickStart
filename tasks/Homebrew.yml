@@ -15,8 +15,11 @@
   failed_when: "(\"Warning: Homebrew's bin was not found in your PATH.\" not in brew_health.stderr)"
   register: brew_health
 
-- name: Up[date/grade] Homebrew
-  command: /usr/local/bin/brew update && brew upgrade
+- name: Update Homebrew
+  command: /usr/local/bin/brew update
+
+- name: Upgrade Homebrew
+  command: /usr/local/bin/brew upgrade
 
 - name: Homebrew Cask
   command: /usr/local/bin/brew install caskroom/cask/brew-cask

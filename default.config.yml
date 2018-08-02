@@ -8,7 +8,7 @@ homebrew_installed_packages:
   - nvm
   - wget
 
-homebrew_uninstalled_packages:
+homebrew_uninstalled_packages: []
 
 homebrew_taps:
   - homebrew/core
@@ -23,5 +23,5 @@ homebrew_cask_apps:
   - vagrant
   # - virtualbox
 
-homebrew_cask_uninstalled_apps:
+homebrew_cask_uninstalled_apps: []
 
